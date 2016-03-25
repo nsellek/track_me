@@ -1,0 +1,36 @@
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+  
+  <div>
+    <%= f.label :first_name %> <br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div>
+    <%= f.label :last_name %> <br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div>
+    <%= f.label :email %> <br>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %> <br>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %> <br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.label :gender %> <br>
+    <%= f.label :male %>
+    <%= f.radio_button :gender, :male %> <br>
+    <%= f.label :female %>
+    <%= f.radio_button :gender, :female %>
+  </div>
+  <div>
+    <%= f.submit :submit %>
+  </div>
+  
+<% end %>
