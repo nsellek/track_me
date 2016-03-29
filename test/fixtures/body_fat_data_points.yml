@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  upper_measurement: 
+  mid_measurement: 
+  lower_measurement: 
+
+two:
+  user: 
+  upper_measurement: 
+  mid_measurement: 
+  lower_measurement: 
