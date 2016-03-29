@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   
   get '/weight_point' => 'weight_data_points#new'
   post '/weight_point' => 'weight_data_points#create'
+  get '/weight_points' => 'weight_data_points#index'
   
 
 

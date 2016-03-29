@@ -1,5 +1,9 @@
 class WeightDataPointsController < ApplicationController
   
+  def index
+    @weight_points = WeightDataPoint.all
+  end
+  
   def new
     @weight_point = WeightDataPoint.new
   end
