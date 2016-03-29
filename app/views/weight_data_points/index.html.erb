@@ -8,7 +8,7 @@
   <% @weight_points.each do |data| %>
   <tr>
     <td><%= to_pounds(data.weight) %></td>
-    <td><%= data.created_at %></td>
+    <td><%= data.created_at.strftime('%b %d, %Y') %></td>
   </tr>
   <% end %>
 </table>
