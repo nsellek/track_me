@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/dashboard' => 'users#dashboard'
   
   get '/weight_point' => 'weight_data_points#new'
+  post '/weight_point' => 'weight_data_points#create'
   
 
 
