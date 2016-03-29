@@ -1,6 +1,6 @@
-class CreateWightTrackers < ActiveRecord::Migration
+class CreateWeightDataPoints < ActiveRecord::Migration
   def change
-    create_table :wight_trackers do |t|
+    create_table :weight_data_points do |t|
       t.references :user, index: true, foreign_key: true
       t.integer :weight
 
