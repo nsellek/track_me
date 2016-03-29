@@ -3,7 +3,7 @@
 <ul>
   <% @weight_points.each do |data| %>
   
-  <li><%= data.weight %> lbs</li>    
+  <li><%= to_pounds(data.weight) %></li>    
   
   <% end %>
 </ul>
