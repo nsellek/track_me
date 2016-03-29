@@ -1,9 +1,16 @@
 <h1>Weight Entries</h1>
 
-<ul>
+<table>
+  <tr>
+    <th>Weight(pounds)</th>
+    <th>Date</th>
+  </tr>
   <% @weight_points.each do |data| %>
-  
-  <li><%= to_pounds(data.weight) %></li>    
-  
+  <tr>
+    <td><%= to_pounds(data.weight) %></td>
+    <td><%= data.created_at %></td>
+  </tr>
   <% end %>
-</ul>
+</table>
+
+<%= button_to 'Back to Dashboard', dashboard_path, method: :get %>
