@@ -1,0 +1,13 @@
+<h1>Weight</h1>
+
+<%= form_for :weight_data_points do |f| %>
+  
+  <div>
+    <%= f.label :enter_weight %>
+    <%= f.number_field :weight %>
+  </div>
+  <div>
+    <%= f.submit :add_weight %>
+  </div>
+  
+<% end %>

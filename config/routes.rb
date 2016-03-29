@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   get '/dashboard' => 'users#dashboard'
   
+  get '/weight_point' => 'weight_data_points#new'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
