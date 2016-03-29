@@ -1,7 +1,7 @@
 class WeightDataPointsController < ApplicationController
   
   def index
-    @weight_points = WeightDataPoint.all
+    @weight_points = WeightDataPoint.where(:user_id => current_user.id)
   end
   
   def new
