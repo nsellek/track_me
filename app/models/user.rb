@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
   validates :gender, presence: true
   
   has_many :weight_data_points
+  has_many :body_fat_data_points
   has_secure_password
 end
