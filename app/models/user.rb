@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :gender, presence: true
   
-  has_many :weight_data_points
-  has_many :body_fat_data_points
+  has_many :weight_data_points, dependent: :destroy
+  has_many :body_fat_data_points, dependent: :destroy
   has_secure_password
 end
