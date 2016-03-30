@@ -1,6 +1,6 @@
 class WeightDataPointsController < ApplicationController
-  include Conversion
-  before_action :convert_pounds_to_grams, only: :create 
+  before_action :convert_pounds_to_grams, only: :create
+   
   def index
     @weight_points = WeightDataPoint.where(:user_id => current_user.id)
   end
