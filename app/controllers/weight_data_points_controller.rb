@@ -1,4 +1,5 @@
 class WeightDataPointsController < ApplicationController
+  include Conversion
   before_action :convert_pounds_to_grams, only: :create
    
   def index
@@ -18,6 +19,12 @@ class WeightDataPointsController < ApplicationController
     else
       redirect_to weight_point_path
     end
+  end
+  
+  def destroy
+    data = WeightDataPoint.find(params[:id])
+    data.delete
+    redirect_to weight_points_path
   end
   
   private

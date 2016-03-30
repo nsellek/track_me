@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   
-  
+  resources :weight_data_points
   
   get 'welcome/index'
 
