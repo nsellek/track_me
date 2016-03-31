@@ -8,7 +8,7 @@
   <% @weight_points.each do |data| %>
   <tr class="grab_me">
     <td class="weight"><%= to_pounds(data.weight) %></td>
-    <td><%= data.created_at.strftime('%b %d, %Y') %></td>
+    <td><%= data.created_at.strftime('%b %d') %></td>
     <td><%= link_to 'Delete', data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
