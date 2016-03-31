@@ -16,7 +16,10 @@ $(function(){
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
     series: [weight_vals]
   }
+  
+  var options = {
+    lineSmooth: Chartist.Interpolation.simple({divisor: 2})
+  }
 
-
-  Chartist.Line('.ct-chart', data);
-})
+  Chartist.Line('.ct-chart', data, options);
+});
