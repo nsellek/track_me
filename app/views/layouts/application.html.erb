@@ -2,10 +2,9 @@
 <html>
 <head>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
   <title>TrackMe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,6 +16,7 @@
 <% end %>
 
 <%= yield %>
-
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

@@ -6,8 +6,8 @@
     <th>Date</th>
   </tr>
   <% @weight_points.each do |data| %>
-  <tr>
-    <td><%= to_pounds(data.weight) %> lbs</td>
+  <tr class="grab_me">
+    <td class="weight"><%= to_pounds(data.weight) %></td>
     <td><%= data.created_at.strftime('%b %d, %Y') %></td>
     <td><%= link_to 'Delete', data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
@@ -16,4 +16,4 @@
 
 <%= button_to 'Back to Dashboard', dashboard_path, method: :get %>
 
-<div class="ct-chart"></div>
+<div class="ct-chart ct-double-octave"></div>
