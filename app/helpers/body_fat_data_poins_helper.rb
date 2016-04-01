@@ -1,0 +1,2 @@
+module BodyFatDataPoinsHelper
+end

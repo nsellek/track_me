@@ -1,0 +1,2 @@
+class BodyFatDataPoinsController < ApplicationController
+end
