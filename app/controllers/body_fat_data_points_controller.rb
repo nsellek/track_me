@@ -1,7 +1,7 @@
-class BodyFatDataPoinsController < ApplicationController
+class BodyFatDataPointsController < ApplicationController
   
   def new
-    
+    @fat_data_point = BodyFatDataPoint.new
   end
   
   def create

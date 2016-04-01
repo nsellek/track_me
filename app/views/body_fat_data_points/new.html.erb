@@ -1,0 +1,21 @@
+<h1>Body Fat</h1>
+
+<%= form_for :fat_data_point, url: :fat_point do |f| %>
+  
+  <div>
+    <%= f.label :upper_measurement %> <br>
+    <%= f.number_field :upper_measurement %>
+  </div>
+  <div>
+    <%= f.label :middle_measurment %> <br>
+    <%= f.number_field :middle_measurment %>
+  </div>
+  <div>
+    <%= f.label :lower_measurement %> <br>
+    <%= f.number_field :lower_measurement %>
+  </div>
+  <div>
+    <%= f.submit 'Add Measurments' %>
+  </div>
+  
+<% end %>
