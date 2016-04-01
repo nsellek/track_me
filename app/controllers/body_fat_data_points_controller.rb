@@ -1,5 +1,9 @@
 class BodyFatDataPointsController < ApplicationController
   
+  def index
+    @fat_data_points = BodyFatDataPoint.all
+  end
+  
   def new
     @fat_data_point = BodyFatDataPoint.new
   end
