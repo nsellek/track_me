@@ -7,13 +7,18 @@ $(function(){
     if (data_points[i].className === 'weight'){
     weight_vals.push(parseFloat(data_points[i].innerHTML));
     }
+    if (data_points[i].className === 'date'){
+      dates.push(data_points[i].innerHTML);
+      console.log(Date.parse(data_points[i]));
+    }
   }
     
   console.log(weight_vals);
   console.log(data_points);
+  console.log(dates);
   
   var data = {
-    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    labels: [dates],
     series: [weight_vals]
   }
   
