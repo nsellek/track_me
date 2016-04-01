@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   post '/weight_point' => 'weight_data_points#create'
   get '/weight_points' => 'weight_data_points#index'
   
-
+  get '/fat_point' => 'body_fat_data_points#new'
+  post '/fat_point' => 'body_fat_data_points#create'
+  get '/fat_points' => 'body_fat_data_points#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
