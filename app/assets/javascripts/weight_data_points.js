@@ -9,7 +9,6 @@ $(function(){
     }
     if (data_points[i].className === 'date'){
       dates.push(data_points[i].innerHTML);
-      console.log(Date.parse(data_points[i]));
     }
   }
     
