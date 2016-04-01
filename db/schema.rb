@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329231328) do
+ActiveRecord::Schema.define(version: 20160401185743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "body_fat_data_points", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "upper_measurement"
-    t.integer  "mid_measurement"
-    t.integer  "lower_measurement"
+    t.float    "upper_measurement"
+    t.float    "mid_measurement"
+    t.float    "lower_measurement"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
