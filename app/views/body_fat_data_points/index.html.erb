@@ -10,10 +10,16 @@
   </tr>
   
   <% @fat_data_points.each do |data| %>
+    <% upper = data.upper_measurement %>
+    <% mid = data.mid_measurement %>
+    <% lower = data.lower_measurement %>
+    <% current_user.gender == 'male' ? body_fat = find_body_fat_for_men(upper, mid, lower, age) : body_fat = find_body_fat_for_women(upper, mid, lower, age) %>
+    
     <tr>
-      <td><%= data.upper_measurement %> mm</td>
-      <td><%= data.mid_measurement %> mm</td>
-      <td><%= data.lower_measurement %> mm</td>
+      <td><%= upper %> mm</td>
+      <td><%= mid %> mm</td>
+      <td><%= lower %> mm</td>
+      <td><%= body_fat %></td>
       <td><%= data.created_at.strftime('%b %d, %Y') %></td>
     </tr>
   <% end %>
