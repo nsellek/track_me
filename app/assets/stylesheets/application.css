@@ -13,4 +13,5 @@
  *= require_tree .
  *= require_self
  *= require chartist.min
+ *= require jquery-ui
  */
