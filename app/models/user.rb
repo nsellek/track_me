@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :gender, presence: true
+  validates :born_on, presence: true
   
   has_many :weight_data_points, dependent: :destroy
   has_many :body_fat_data_points, dependent: :destroy
