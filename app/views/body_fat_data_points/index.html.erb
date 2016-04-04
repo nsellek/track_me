@@ -1,0 +1,23 @@
+<h1>Body Fat Entries</h1>
+
+<table>
+  <tr>
+    <th>Upper Measurement</th>
+    <th>Middle Measurement</th>
+    <th>Lower Measurement</th>
+    <th>Body Fat %</th>
+    <th>Date Entered</th>
+  </tr>
+  
+  <% @fat_data_points.each do |data| %>
+    <tr>
+      <td><%= data.upper_measurement %> mm</td>
+      <td><%= data.mid_measurement %> mm</td>
+      <td><%= data.lower_measurement %> mm</td>
+      <td><%= data.created_at.strftime('%b %d, %Y') %></td>
+    </tr>
+  <% end %>
+  
+</table>
+
+<%= button_to 'Back to Dashboard', dashboard_path, method: :get %>

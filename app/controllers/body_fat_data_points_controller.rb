@@ -9,6 +9,7 @@ class BodyFatDataPointsController < ApplicationController
   end
   
   def create
+    binding.pry
     @fat_data_point = BodyFatDataPoint.new(allowed_params)
     
     if @fat_data_point.save
@@ -22,6 +23,6 @@ class BodyFatDataPointsController < ApplicationController
   private
   
   def allowed_params
-    params.require(:body_fat_data_point).permit(:upper_measurement, :mid_measurement, :lower_measurement)
+    params.require(:fat_data_point).permit(:upper_measurement, :mid_measurement, :lower_measurement)
   end
 end
