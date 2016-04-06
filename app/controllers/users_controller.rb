@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
+      binding.pry
       redirect_to signup_path
     end
   end
@@ -21,6 +22,6 @@ class UsersController < ApplicationController
   private
   
   def allowed_user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_comfirmation, :gender)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :gender, :born_on)
   end
 end
