@@ -1,5 +1,5 @@
 class AddColumnToUsers < ActiveRecord::Migration
   def change
-    add_column :users, :born_on, :time
+    add_column :users, :born_on, :datetime
   end
 end

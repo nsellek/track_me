@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   end
   
   def create
+    binding.pry
+    User.convert_born_on_to_date(params)
     user = User.new(allowed_user_params)
     if user.save
       session[:user_id] = user.id

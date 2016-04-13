@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :weight_data_points, dependent: :destroy
   has_many :body_fat_data_points, dependent: :destroy
   has_secure_password
+  
+  def self.convert_born_on_to_date(params)
+    params[:user][:born_on] = Date.strptime(params[:user][:born_on], '%m/%d/%y')
+  end
 end

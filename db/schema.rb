@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160404180104) do
     t.string   "gender"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.time     "born_on"
+    t.datetime "born_on"
   end
 
   create_table "weight_data_points", force: :cascade do |t|
