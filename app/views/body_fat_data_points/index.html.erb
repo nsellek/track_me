@@ -13,14 +13,14 @@
     <% upper = data.upper_measurement %>
     <% mid = data.mid_measurement %>
     <% lower = data.lower_measurement %>
-    <% age = (Time.new.year - current_user.born_on.year).to_i %>
+    <% age = (Time.new.year - current_user.born_on.year) %>
     <% current_user.gender == 'male' ? body_fat = find_body_fat_for_men(upper, mid, lower, age) : body_fat = find_body_fat_for_women(upper, mid, lower, age) %>
     
     <tr>
       <td><%= upper %> mm</td>
       <td><%= mid %> mm</td>
       <td><%= lower %> mm</td>
-      <td><%= body_fat %></td>
+      <td><%= body_fat.round(2) %></td>
       <td><%= data.created_at.strftime('%b %d, %Y') %></td>
     </tr>
   <% end %>

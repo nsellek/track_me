@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_secure_password
   
   def self.convert_born_on_to_date(params)
-    params[:user][:born_on] = Date.strptime(params[:user][:born_on], '%m/%d/%y')
+    params[:user][:born_on] = Time.strptime(params[:user][:born_on], '%m/%d/%y')
   end
 end
