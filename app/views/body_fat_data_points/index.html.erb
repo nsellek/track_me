@@ -13,6 +13,7 @@
     <% upper = data.upper_measurement %>
     <% mid = data.mid_measurement %>
     <% lower = data.lower_measurement %>
+    <% age = (Date.new.year - current_user.born_on.year).to_i %>
     <% current_user.gender == 'male' ? body_fat = find_body_fat_for_men(upper, mid, lower, age) : body_fat = find_body_fat_for_women(upper, mid, lower, age) %>
     
     <tr>
