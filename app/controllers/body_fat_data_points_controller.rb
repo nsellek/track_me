@@ -20,6 +20,12 @@ class BodyFatDataPointsController < ApplicationController
     end
   end
   
+  def destroy
+    data = BodyFatDataPoint.find(params[:id])
+    data.delete
+    redirect_to fat_points_path
+  end
+  
   private
   
   def allowed_params
