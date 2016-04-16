@@ -22,6 +22,7 @@
       <td><%= lower %> mm</td>
       <td><%= body_fat.round(2) %></td>
       <td><%= data.created_at.strftime('%b %d, %Y') %></td>
+      <td><%= link_to 'delete', data, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
   

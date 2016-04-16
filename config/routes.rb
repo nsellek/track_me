@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   resources :weight_data_points
+  resources :body_fat_data_points
   
   get 'welcome/index'
 
