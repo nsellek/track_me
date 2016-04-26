@@ -12,9 +12,9 @@ $(function(){
     }
   }
     
-  console.log(weight_vals);
-  console.log(data_points);
-  console.log(dates);
+  // console.log(weight_vals);
+  // console.log(data_points);
+  // console.log(dates);
   
   var data = {
     labels: [dates],

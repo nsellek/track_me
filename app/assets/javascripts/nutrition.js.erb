@@ -1,0 +1,28 @@
+
+var foodContainer = $('#food_container')
+
+$('.search').on('click', function(event){
+  event.preventDefault();
+  console.log($('#food_name').val());
+  var search = $('#food_name').val();
+  $.ajax({
+    url: "https://api.nutritionix.com/v1_1/search/",
+    method: 'POST',
+    data: {
+      appId: "<%= ENV['appId'] %>",
+      appKey: "<%= ENV['appKey'] %>",
+      query: search,
+      fields: ['item_name', 'nf_calories', 'nf_total_fat', 'nf_total_carbohydrate', 'nf_protein'],
+      limit: 50
+    },
+    success: function(data){
+      console.log(data);
+      foodContainer.empty();
+      $.each(data.hits, function(index, hash){
+        // console.dir(hash.fields);
+        var foodHash = hash.fields
+        foodContainer.append('<div><p>'+foodHash.item_name+'</p><p>Calories: '+foodHash.nf_calories+'</p></div>');
+      });
+    }}
+    );
+});
