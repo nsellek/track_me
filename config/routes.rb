@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/fat_points' => 'body_fat_data_points#index'
   
   get '/search' => 'nutrition#search'
+  get '/food_item' => 'nutrition#show_food_item'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
