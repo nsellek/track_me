@@ -1,10 +1,7 @@
 
 var foodContainer = $('#food_container')
 
-$('.search').on('click', function(event){
-  event.preventDefault();
-  console.log($('#food_name').val());
-  var search = $('#food_name').val();
+function foodSearch(search){
   $.ajax({
     url: "https://api.nutritionix.com/v1_1/search/",
     method: 'POST',
@@ -29,5 +26,22 @@ $('.search').on('click', function(event){
       });
     }}
     );
+}
+
+$('.search').on('click', function(event){
+  event.preventDefault();
+  // console.log($('#food_name').val());
+  var search = $('#food_name').val();
+  foodSearch(search);
 });
+
+$('#food_name').keypress(function(event){
+  if (event.which == 13){
+    event.preventDefault();
+    console.log('enter was pressed');
+    var search = $('#food_name').val();
+    foodSearch(search);
+  }
+})
+
 
