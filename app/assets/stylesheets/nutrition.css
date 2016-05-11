@@ -43,3 +43,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.visible{
+  display: block !important; 
+}

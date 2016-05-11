@@ -34,7 +34,6 @@ $('.search').on('click', function(event){
   var search = $('#food_name').val();
   foodSearch(search);
 });
-
 $('#food_name').keypress(function(event){
   if (event.which == 13){
     event.preventDefault();
@@ -46,4 +45,6 @@ $('#food_name').keypress(function(event){
 
 $('body').on('click','.food_info', function(){
   console.log($(this).parent());
+  $('#myModal').addClass('visible');
 });
+
