@@ -13,7 +13,7 @@ function foodSearch(search){
       limit: 50
     },
     success: function(data){
-      console.log(data);
+      // console.log(data);
       foodContainer.empty();
       $.each(data.hits, function(index, hash){
         // console.dir(hash.fields);
@@ -21,7 +21,7 @@ function foodSearch(search){
         foodContainer.append('<div class="food_item">\
           <p>'+foodHash.item_name+'</p>\
           <p>Calories: '+foodHash.nf_calories+' | Total Fat: '+foodHash.nf_total_fat+' | Total Carbs: '+foodHash.nf_total_carbohydrate+' | Protein: '+foodHash.nf_protein+'</p>\
-          <button type="button">Select Food</button>\
+          <button type="button" class="food_info">Select Food</button>\
           </div>');
       });
     }}
@@ -38,10 +38,12 @@ $('.search').on('click', function(event){
 $('#food_name').keypress(function(event){
   if (event.which == 13){
     event.preventDefault();
-    console.log('enter was pressed');
+    // console.log('enter was pressed');
     var search = $('#food_name').val();
     foodSearch(search);
   }
-})
+});
 
-
+$('body').on('click','.food_info', function(){
+  console.log($(this).parent());
+});
