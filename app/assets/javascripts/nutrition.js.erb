@@ -21,8 +21,13 @@ $('.search').on('click', function(event){
       $.each(data.hits, function(index, hash){
         // console.dir(hash.fields);
         var foodHash = hash.fields
-        foodContainer.append('<div class="food_item"><p>'+foodHash.item_name+'</p><p>Calories: '+foodHash.nf_calories+' | Total Fat: '+foodHash.nf_total_fat+' | Total Carbs: '+foodHash.nf_total_carbohydrate+' | Protein: '+foodHash.nf_protein+'</p><button type="button">Select Food</button></div>');
+        foodContainer.append('<div class="food_item">\
+          <p>'+foodHash.item_name+'</p>\
+          <p>Calories: '+foodHash.nf_calories+' | Total Fat: '+foodHash.nf_total_fat+' | Total Carbs: '+foodHash.nf_total_carbohydrate+' | Protein: '+foodHash.nf_protein+'</p>\
+          <button type="button">Select Food</button>\
+          </div>');
       });
     }}
     );
 });
+
