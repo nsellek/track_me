@@ -44,8 +44,9 @@ $('#food_name').keypress(function(event){
 });
 
 $('body').on('click','.food_info', function(){
-  console.log($(this).parent());
+  // console.log($(this).parent());
   $('#myModal').addClass('visible');
+  
 });
 $('.close').on('click', function(){
   $('#myModal').removeClass('visible');

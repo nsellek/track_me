@@ -48,3 +48,4 @@ end
 gem 'pry-rails'
 gem 'chartist-rails'
 gem 'jquery-ui-rails'
+gem 'better_errors'
