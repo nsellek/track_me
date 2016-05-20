@@ -1,5 +1,8 @@
 
-var foodContainer = $('#food_container')
+var foodContainer = $('#food_container');
+var header = $('.modal-header h2');
+var body = $('.modal-body');
+var footer = $('.modal-footer');
 
 function foodSearch(search){
   $.ajax({
@@ -9,8 +12,7 @@ function foodSearch(search){
       appId: "<%= ENV['appId'] %>",
       appKey: "<%= ENV['appKey'] %>",
       query: search,
-      fields: ['item_name', 'nf_calories', 'nf_total_fat', 'nf_total_carbohydrate', 'nf_protein'],
-      limit: 50
+      fields: ['item_name', 'nf_calories', 'nf_total_fat', 'nf_total_carbohydrate', 'nf_protein']
     },
     success: function(data){
       // console.log(data);
@@ -19,8 +21,8 @@ function foodSearch(search){
         // console.dir(hash.fields);
         var foodHash = hash.fields
         foodContainer.append('<div class="food_item">\
-          <p>'+foodHash.item_name+'</p>\
-          <p>Calories: '+foodHash.nf_calories+' | Total Fat: '+foodHash.nf_total_fat+' | Total Carbs: '+foodHash.nf_total_carbohydrate+' | Protein: '+foodHash.nf_protein+'</p>\
+          <p class="food_name">'+foodHash.item_name+'</p>\
+          <p class="nutrition"><span class="calories">Calories: '+foodHash.nf_calories+'</span> | <span class="fat">Total Fat: '+foodHash.nf_total_fat+'</span> | <span class="carbs">Total Carbs: '+foodHash.nf_total_carbohydrate+'</span> | <span class="protein">Protein: '+foodHash.nf_protein+'</span></p>\
           <button type="button" class="food_info">Select Food</button>\
           </div>');
       });
@@ -44,9 +46,19 @@ $('#food_name').keypress(function(event){
 });
 
 $('body').on('click','.food_info', function(){
-  // console.log($(this).parent());
+  var food_item = $(this).parent().clone();
+  var food_name = food_item[0];
+  var food_nutrition = food_item[1]
+  console.log(food_item);
   $('#myModal').addClass('visible');
-  
+  header.append(food_item.find('.food_name'));
+  body.append(food_item.find('.calories'));
+  body.append('<br><br>');
+  body.append(food_item.find('.fat'));
+  body.append('<br><br>');
+  body.append(food_item.find('.carbs'));
+  body.append('<br><br>');
+  body.append(food_item.find('.protein'));
 });
 $('.close').on('click', function(){
   $('#myModal').removeClass('visible');
